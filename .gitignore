@@ -39,3 +39,9 @@
 
 # debug information files
 *.dwo
+
+# input files
+*.txt
+
+# Build Files
+**/build
