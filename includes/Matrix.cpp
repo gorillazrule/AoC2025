@@ -137,3 +137,9 @@ std::vector<std::pair<int, int>> Matrix::find(char c)
 	}
 	return hits;	
 }
+
+void Matrix::set(std::pair<int,int> &coord, char c)
+{
+	//sets the char at coord to c
+	this->data.at(coord.first + coord.second * this->width) = c;
+}

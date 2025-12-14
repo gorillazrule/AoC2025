@@ -19,4 +19,6 @@ add_executable(d3p2 ${CMAKE_CURRENT_SOURCE_DIR}/Day3/d3_p2.cpp)
 
 add_executable(d4p1 ${CMAKE_CURRENT_SOURCE_DIR}/Day4/d4_p1.cpp)
 target_link_libraries(d4p1 PRIVATE Matrix)
+add_executable(d4p2 ${CMAKE_CURRENT_SOURCE_DIR}/Day4/d4_p2.cpp)
+target_link_libraries(d4p2 PRIVATE Matrix)
 
