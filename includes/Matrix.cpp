@@ -36,7 +36,7 @@ Matrix::Matrix(int w, int h, char c)
 bool Matrix::inBounds(int x, int y)
 {
 	//checks wether the coordinates given are in or outside of the given matrix.
-	if(x > 0 && y > 0 && x < this->width && y < this->height)
+	if(x >= 0 && y >= 0 && x < this->width && y < this->height)
 	{
 		return true;
 	}
@@ -77,6 +77,7 @@ void Matrix::fill(char c)
 
 std::vector<std::pair<int,int>> Matrix::search(std::pair<int,int> &loc, std::function<bool (char,char)> comp, char c)
 {
+	//Search adjacent coords to loc for chars where comp returns true
 	std::vector<std::pair<int,int>> hits;
 	std::pair<int,int> check = loc;
 	//add all 8 adacent coords to hits
@@ -116,4 +117,23 @@ std::vector<std::pair<int,int>> Matrix::search(std::pair<int,int> &loc, std::fun
 	}
 	
 	return hits;
+}
+
+std::vector<std::pair<int, int>> Matrix::find(char c)
+{
+	//find every instance of c within the matrix.
+	std::vector<std::pair<int,int>> hits;
+	
+	std::pair<int,int> temp;
+	
+	for(int i = 0; i < this->data.size(); ++i)
+	{
+		if(this->data.at(i) == c)
+		{
+			temp.first = i % this->width;
+			temp.second = i / this->width;
+			hits.push_back(temp);
+		}
+	}
+	return hits;	
 }

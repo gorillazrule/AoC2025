@@ -20,4 +20,7 @@ public:
 	int count(char c);
 	void fill(char c);
 	std::vector<std::pair<int,int>> search(std::pair<int,int> &loc, std::function<bool (char,char)> comp, char c);
+	int getHeight() {return this->height;};
+	int getWidth() {return this->width;};
+	std::vector<std::pair<int, int>> find(char c);
 };
