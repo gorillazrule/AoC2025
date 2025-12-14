@@ -42,6 +42,7 @@
 
 # input files
 *.txt
+!CMakeLists.txt
 
 # Build Files
 **/build
