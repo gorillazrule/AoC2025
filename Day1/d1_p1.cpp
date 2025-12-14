@@ -7,7 +7,7 @@
 int main()
 {
 	//Read in all the operations from the input
-	std::ifstream infile("../input.txt");
+	std::ifstream infile("../Day1/input.txt");
 	
 	std::string temp;
 	std::queue<int> operations;

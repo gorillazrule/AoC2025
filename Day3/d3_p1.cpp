@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 {
 	//read filename from command line
 	std::string filename = argv[1];
-	std::ifstream infile("../" + filename + ".txt");
+	std::ifstream infile("../Day3/" + filename + ".txt");
 	
 	std::string line;
 	std::vector<int> joltages;

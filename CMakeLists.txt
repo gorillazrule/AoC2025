@@ -6,6 +6,7 @@ set(CMAKE_CXX_COMPILER "g++")
 
 
 add_library(Matrix SHARED ${CMAKE_CURRENT_SOURCE_DIR}/includes/Matrix.h ${CMAKE_CURRENT_SOURCE_DIR}/includes/Matrix.cpp)
+target_include_directories(Matrix PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 
 add_executable(d1p1 ${CMAKE_CURRENT_SOURCE_DIR}/Day1/d1_p1.cpp)
 add_executable(d1p2 ${CMAKE_CURRENT_SOURCE_DIR}/Day1/d1_p2.cpp)

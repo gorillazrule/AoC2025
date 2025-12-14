@@ -1,8 +1,11 @@
-
+#include "Matrix.h"
 
 int main(int argc, char* argv[])
 {
 	//TODO Get file from command line and open it.
+	//std::ifstream infile();
+	
+	
 	
 	//TODO Make 2D vector library file.
 	

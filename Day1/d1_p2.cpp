@@ -7,7 +7,7 @@
 int main()
 {
 	//Read in all the operations from the input
-	std::ifstream infile("../input.txt");
+	std::ifstream infile("../Day1/input.txt");
 	//std::ifstream infile("../test1.txt");
 	
 	std::string temp;

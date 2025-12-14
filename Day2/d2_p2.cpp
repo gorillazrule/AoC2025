@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 {
 	//get filename from command line
 	std::string filename = argv[1];
-	std::ifstream infile("../" + filename + ".txt");
+	std::ifstream infile("../Day2/" + filename + ".txt");
 	
 	std::vector<std::pair<long long,long long>> IDRanges;
 	
