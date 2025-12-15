@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 	
 	Matrix floorPlan(infile);
 	
-	//Search through vector, and check each roll of paper to see if it can be moved.
+	//Loop through marking the rolls that can be moved, then check agian. Repeat until no more rolls can be moved.
 	std::vector<std::pair<int,int>> rolls;
 	std::vector<std::pair<int,int>> adjacent;
 	
