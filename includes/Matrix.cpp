@@ -143,3 +143,8 @@ void Matrix::set(std::pair<int,int> &coord, char c)
 	//sets the char at coord to c
 	this->data.at(coord.first + coord.second * this->width) = c;
 }
+
+void Matrix::set(int x, int y, char c)
+{
+	this->data.at(x + y * this->width) = c;
+}

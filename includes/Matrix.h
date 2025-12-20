@@ -24,4 +24,5 @@ public:
 	int getWidth() {return this->width;};
 	std::vector<std::pair<int, int>> find(char c);
 	void set(std::pair<int,int> &coord, char c);
+	void set(int x, int y, char c);
 };
