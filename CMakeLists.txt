@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 project(AoC2025)
 
 set(CMAKE_CXX_COMPILER "g++")
+set(CMAKE_CXX_STANDARD 20)
 
 
 add_library(Matrix SHARED ${CMAKE_CURRENT_SOURCE_DIR}/includes/Matrix.h ${CMAKE_CURRENT_SOURCE_DIR}/includes/Matrix.cpp)
@@ -30,4 +31,5 @@ add_executable(d6p2 ${CMAKE_CURRENT_SOURCE_DIR}/Day6/d6_p2.cpp)
 
 add_executable(d7p1 ${CMAKE_CURRENT_SOURCE_DIR}/Day7/d7_p1.cpp)
 target_link_libraries(d7p1 PRIVATE Matrix)
-
+add_executable(d7p2 ${CMAKE_CURRENT_SOURCE_DIR}/Day7/d7_p2.cpp)
+target_link_libraries(d7p2 PRIVATE Matrix)
