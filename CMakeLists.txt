@@ -39,5 +39,7 @@ target_link_libraries(d7p2 PRIVATE Matrix)
 
 add_executable(d8p1 ${CMAKE_CURRENT_SOURCE_DIR}/Day8/d8_p1.cpp)
 target_link_libraries(d8p1 PRIVATE UnionFind)
+add_executable(d8p2 ${CMAKE_CURRENT_SOURCE_DIR}/Day8/d8_p2.cpp)
+target_link_libraries(d8p2 PRIVATE UnionFind)
 
 
