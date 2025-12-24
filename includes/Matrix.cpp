@@ -1,5 +1,7 @@
 #include "Matrix.h"
 #include <string>
+#include <list>
+#include <iostream>
 
 
 Matrix::Matrix(std::ifstream &infile)
@@ -41,6 +43,11 @@ bool Matrix::inBounds(int x, int y)
 		return true;
 	}
 	return false;
+}
+
+bool Matrix::inBounds(std::pair<int,int> &coord)
+{
+	return this->inBounds(coord.first, coord.second);
 }
 
 char Matrix::at(int x,int y)
@@ -147,4 +154,56 @@ void Matrix::set(std::pair<int,int> &coord, char c)
 void Matrix::set(int x, int y, char c)
 {
 	this->data.at(x + y * this->width) = c;
+}
+
+void Matrix::floodFill(std::pair<int,int> coord, char c, char valid)
+{
+	//Will replace all characters matching valid with c
+	
+	//set coord to c, and add all adjacent coords to a list to be checked.
+	std::list<std::pair<int,int>> check;
+	this->set(coord,c);
+	check.push_back(std::pair<int,int>{coord.first + 1, coord.second});
+	check.push_back(std::pair<int,int>{coord.first - 1, coord.second});
+	check.push_back(std::pair<int,int>{coord.first, coord.second + 1});
+	check.push_back(std::pair<int,int>{coord.first, coord.second - 1});
+	
+	//loop through until there are no more coords to be checked.
+	while(!check.empty())
+	{
+		std::pair<int,int> cur = check.front();
+		check.pop_front();
+		if(this->inBounds(cur))
+		{
+			if(this->at(cur) != valid)
+			{
+				continue;
+			}
+			else
+			{
+				this->set(cur,c);
+				check.push_back(std::pair<int,int>{cur.first + 1, cur.second});
+				check.push_back(std::pair<int,int>{cur.first - 1, cur.second});
+				check.push_back(std::pair<int,int>{cur.first, cur.second + 1});
+				check.push_back(std::pair<int,int>{cur.first, cur.second - 1});
+			}
+		}
+	}
+}
+
+void Matrix::floodFill(int x, int y, char c, char valid)
+{
+	this->floodFill(std::pair<int,int>{x,y},c,valid);
+}
+
+void Matrix::print()
+{
+	for(int j = 0; j < this->height; ++j)
+	{
+		for(int i = 0; i < this->width; ++i)
+		{
+			std::cout << this->at(i,j);
+		}
+		std::cout << std::endl;
+	}
 }
